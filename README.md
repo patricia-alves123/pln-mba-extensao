@@ -30,7 +30,7 @@ pip install -r requirements.txt
 ## Requisitos
 
 - Python 3.10+
-- Jupyter Notebook / Google Colab
+- Jupyter Notebook / [Google Colab](https://colab.research.google.com/)
 - Conhecimentos básicos de Python e Machine Learning
 
 ---
