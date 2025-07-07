@@ -62,3 +62,4 @@ pip install -r requirements.txt
 14. [Categorizing and Tagging Words](https://www.nltk.org/book/ch05.html)
 15. [What is Parts of Speech (POS) Tagging Natural Language Processing?In what kind of applications we can use Parts of Speech (POS) Tagging in Natural Language Processing.](https://medium.com/@sujathamudadla1213/what-is-parts-of-speech-pos-tagging-natural-language-processing-in-2b8f4b07b186)
 16. [Universal Dependencies](https://universaldependencies.org/)
+17. [The Asimov Institute](https://www.asimovinstitute.org/)
