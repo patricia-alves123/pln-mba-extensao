@@ -39,7 +39,7 @@ pip install -r requirements.txt
 
 ---
 
-**Contato do instrutor:** Roni <br />
+**Contato do instrutor:** Roni Maciel <br />
 **LinkedIn:** [linkedin.com/in/ronierisonmaciel](https://linkedin.com/in/ronierisonmaciel)
 
 ---
