@@ -1,0 +1,639 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/patricia-alves123/pln-mba-extensao/blob/main/atv1.ipynb%20PLN\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "b7f81a13",
+      "metadata": {
+        "id": "b7f81a13"
+      },
+      "source": [
+        "# <font color='00609C'>Questão 1</font>\n",
+        "\n",
+        "Utilizando o spacy, extraia o nome dos personagens presentes no terceiro capitulo da obra \"Mémorias postumas de Brás Cubas\" de Machado de Assis."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "id": "44c34135",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 105
+        },
+        "id": "44c34135",
+        "outputId": "9b9d705b-5f29-435e-dde1-73f49999a3ed"
+      },
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "'Mas, já que falei nos meus dois tios, deixem-me fazer aqui um curto esboço genealógico. O fundador de minha família foi um certo Damião Cubas, que floresceu na primeira metade do século XVIII. Era tanoeiro de ofício, natural do Rio de Janeiro, onde teria morrido na penúria e na obscuridade, se somente exercesse a tanoaria. Mas não; fez-se lavrador, plantou, colheu, permutou o seu produto por boas e honradas patacas, até que morreu, deixando grosso cabedal a um filho, o licenciado Luís Cubas. Neste rapaz é que verdadeiramente começa a série de meus avós –– dos avós que a minha família sempre confessou –– porque o Damião Cubas era afinal de contas um tanoeiro, e talvez mau tanoeiro, ao passo que o Luís Cubas estudou em Coimbra, primou no Estado, e foi um dos amigos particulares do vice-rei conde da Cunha. Como este apelido de Cubas lhe cheirasse excessivamente a tanoaria, alegava meu pai, bisneto do Damião, que o dito apelido fora dado a um cavaleiro, herói nas jornadas da Africa, em prêmio da façanha que praticou arrebatando trezentas cubas ao mouros. Meu pai era homem de imaginação; escapou à tanoaria nas asas de um calembour. Era um bom caráter, meu pai, varão digno e leal como poucos. Tinha, é verdade, uns fumos de pacholice; mas quem não é um pouco pachola nesse mundo? Releva notar que ele não recorreu à inventiva senão depois de experimentar a falsificação; primeiramente, entroncou-se na família daquele meu famoso homônimo, o capitão-mor Brás Cubas, que fundou a vila de São Vicente, onde morreu em 1592, e por esse motivo é que me deu o nome de Brás. Opôs-se-lhe, porém, a família do capitão-mor, e foi então que ele imaginou as trezentas cubas mouriscas. Vivem ainda alguns membros de minha família, minha sobrinha Venância, por exemplo, o lírio-do-vale, que é a flor das damas do seu tempo; vive o pai, o Cotrim, um sujeito que... Mas não antecipemos os sucessos; acabemos de uma vez com o nosso emplasto.'"
+            ],
+            "application/vnd.google.colaboratory.intrinsic+json": {
+              "type": "string"
+            }
+          },
+          "metadata": {},
+          "execution_count": 1
+        }
+      ],
+      "source": [
+        "cap_3_bras_cubas = \"Mas, já que falei nos meus dois tios, deixem-me fazer aqui um curto esboço genealógico. O fundador de minha família foi um certo Damião Cubas, que floresceu na primeira metade do século XVIII. Era tanoeiro de ofício, natural do Rio de Janeiro, onde teria morrido na penúria e na obscuridade, se somente exercesse a tanoaria. Mas não; fez-se lavrador, plantou, colheu, permutou o seu produto por boas e honradas patacas, até que morreu, deixando grosso cabedal a um filho, o licenciado Luís Cubas. Neste rapaz é que verdadeiramente começa a série de meus avós –– dos avós que a minha família sempre confessou –– porque o Damião Cubas era afinal de contas um tanoeiro, e talvez mau tanoeiro, ao passo que o Luís Cubas estudou em Coimbra, primou no Estado, e foi um dos amigos particulares do vice-rei conde da Cunha. Como este apelido de Cubas lhe cheirasse excessivamente a tanoaria, alegava meu pai, bisneto do Damião, que o dito apelido fora dado a um cavaleiro, herói nas jornadas da Africa, em prêmio da façanha que praticou arrebatando trezentas cubas ao mouros. Meu pai era homem de imaginação; escapou à tanoaria nas asas de um calembour. Era um bom caráter, meu pai, varão digno e leal como poucos. Tinha, é verdade, uns fumos de pacholice; mas quem não é um pouco pachola nesse mundo? Releva notar que ele não recorreu à inventiva senão depois de experimentar a falsificação; primeiramente, entroncou-se na família daquele meu famoso homônimo, o capitão-mor Brás Cubas, que fundou a vila de São Vicente, onde morreu em 1592, e por esse motivo é que me deu o nome de Brás. Opôs-se-lhe, porém, a família do capitão-mor, e foi então que ele imaginou as trezentas cubas mouriscas. Vivem ainda alguns membros de minha família, minha sobrinha Venância, por exemplo, o lírio-do-vale, que é a flor das damas do seu tempo; vive o pai, o Cotrim, um sujeito que... Mas não antecipemos os sucessos; acabemos de uma vez com o nosso emplasto.\"\n",
+        "cap_3_bras_cubas"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "fb875acb",
+      "metadata": {
+        "id": "fb875acb"
+      },
+      "source": [
+        "**<font color='D72009'> Sua resposta aqui </font>**"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "7667e216",
+      "metadata": {
+        "id": "7667e216"
+      },
+      "source": [
+        "## Instalando Bibliotecas"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 2,
+      "id": "0ae2850e",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "0ae2850e",
+        "outputId": "a4396d55-8e88-47a0-9510-921ec9e8b88d"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Requirement already satisfied: spacy in /usr/local/lib/python3.11/dist-packages (3.8.7)\n",
+            "Requirement already satisfied: spacy-legacy<3.1.0,>=3.0.11 in /usr/local/lib/python3.11/dist-packages (from spacy) (3.0.12)\n",
+            "Requirement already satisfied: spacy-loggers<2.0.0,>=1.0.0 in /usr/local/lib/python3.11/dist-packages (from spacy) (1.0.5)\n",
+            "Requirement already satisfied: murmurhash<1.1.0,>=0.28.0 in /usr/local/lib/python3.11/dist-packages (from spacy) (1.0.13)\n",
+            "Requirement already satisfied: cymem<2.1.0,>=2.0.2 in /usr/local/lib/python3.11/dist-packages (from spacy) (2.0.11)\n",
+            "Requirement already satisfied: preshed<3.1.0,>=3.0.2 in /usr/local/lib/python3.11/dist-packages (from spacy) (3.0.10)\n",
+            "Requirement already satisfied: thinc<8.4.0,>=8.3.4 in /usr/local/lib/python3.11/dist-packages (from spacy) (8.3.6)\n",
+            "Requirement already satisfied: wasabi<1.2.0,>=0.9.1 in /usr/local/lib/python3.11/dist-packages (from spacy) (1.1.3)\n",
+            "Requirement already satisfied: srsly<3.0.0,>=2.4.3 in /usr/local/lib/python3.11/dist-packages (from spacy) (2.5.1)\n",
+            "Requirement already satisfied: catalogue<2.1.0,>=2.0.6 in /usr/local/lib/python3.11/dist-packages (from spacy) (2.0.10)\n",
+            "Requirement already satisfied: weasel<0.5.0,>=0.1.0 in /usr/local/lib/python3.11/dist-packages (from spacy) (0.4.1)\n",
+            "Requirement already satisfied: typer<1.0.0,>=0.3.0 in /usr/local/lib/python3.11/dist-packages (from spacy) (0.16.0)\n",
+            "Requirement already satisfied: tqdm<5.0.0,>=4.38.0 in /usr/local/lib/python3.11/dist-packages (from spacy) (4.67.1)\n",
+            "Requirement already satisfied: numpy>=1.19.0 in /usr/local/lib/python3.11/dist-packages (from spacy) (2.0.2)\n",
+            "Requirement already satisfied: requests<3.0.0,>=2.13.0 in /usr/local/lib/python3.11/dist-packages (from spacy) (2.32.3)\n",
+            "Requirement already satisfied: pydantic!=1.8,!=1.8.1,<3.0.0,>=1.7.4 in /usr/local/lib/python3.11/dist-packages (from spacy) (2.11.7)\n",
+            "Requirement already satisfied: jinja2 in /usr/local/lib/python3.11/dist-packages (from spacy) (3.1.6)\n",
+            "Requirement already satisfied: setuptools in /usr/local/lib/python3.11/dist-packages (from spacy) (75.2.0)\n",
+            "Requirement already satisfied: packaging>=20.0 in /usr/local/lib/python3.11/dist-packages (from spacy) (24.2)\n",
+            "Requirement already satisfied: langcodes<4.0.0,>=3.2.0 in /usr/local/lib/python3.11/dist-packages (from spacy) (3.5.0)\n",
+            "Requirement already satisfied: language-data>=1.2 in /usr/local/lib/python3.11/dist-packages (from langcodes<4.0.0,>=3.2.0->spacy) (1.3.0)\n",
+            "Requirement already satisfied: annotated-types>=0.6.0 in /usr/local/lib/python3.11/dist-packages (from pydantic!=1.8,!=1.8.1,<3.0.0,>=1.7.4->spacy) (0.7.0)\n",
+            "Requirement already satisfied: pydantic-core==2.33.2 in /usr/local/lib/python3.11/dist-packages (from pydantic!=1.8,!=1.8.1,<3.0.0,>=1.7.4->spacy) (2.33.2)\n",
+            "Requirement already satisfied: typing-extensions>=4.12.2 in /usr/local/lib/python3.11/dist-packages (from pydantic!=1.8,!=1.8.1,<3.0.0,>=1.7.4->spacy) (4.14.1)\n",
+            "Requirement already satisfied: typing-inspection>=0.4.0 in /usr/local/lib/python3.11/dist-packages (from pydantic!=1.8,!=1.8.1,<3.0.0,>=1.7.4->spacy) (0.4.1)\n",
+            "Requirement already satisfied: charset-normalizer<4,>=2 in /usr/local/lib/python3.11/dist-packages (from requests<3.0.0,>=2.13.0->spacy) (3.4.2)\n",
+            "Requirement already satisfied: idna<4,>=2.5 in /usr/local/lib/python3.11/dist-packages (from requests<3.0.0,>=2.13.0->spacy) (3.10)\n",
+            "Requirement already satisfied: urllib3<3,>=1.21.1 in /usr/local/lib/python3.11/dist-packages (from requests<3.0.0,>=2.13.0->spacy) (2.4.0)\n",
+            "Requirement already satisfied: certifi>=2017.4.17 in /usr/local/lib/python3.11/dist-packages (from requests<3.0.0,>=2.13.0->spacy) (2025.7.9)\n",
+            "Requirement already satisfied: blis<1.4.0,>=1.3.0 in /usr/local/lib/python3.11/dist-packages (from thinc<8.4.0,>=8.3.4->spacy) (1.3.0)\n",
+            "Requirement already satisfied: confection<1.0.0,>=0.0.1 in /usr/local/lib/python3.11/dist-packages (from thinc<8.4.0,>=8.3.4->spacy) (0.1.5)\n",
+            "Requirement already satisfied: click>=8.0.0 in /usr/local/lib/python3.11/dist-packages (from typer<1.0.0,>=0.3.0->spacy) (8.2.1)\n",
+            "Requirement already satisfied: shellingham>=1.3.0 in /usr/local/lib/python3.11/dist-packages (from typer<1.0.0,>=0.3.0->spacy) (1.5.4)\n",
+            "Requirement already satisfied: rich>=10.11.0 in /usr/local/lib/python3.11/dist-packages (from typer<1.0.0,>=0.3.0->spacy) (13.9.4)\n",
+            "Requirement already satisfied: cloudpathlib<1.0.0,>=0.7.0 in /usr/local/lib/python3.11/dist-packages (from weasel<0.5.0,>=0.1.0->spacy) (0.21.1)\n",
+            "Requirement already satisfied: smart-open<8.0.0,>=5.2.1 in /usr/local/lib/python3.11/dist-packages (from weasel<0.5.0,>=0.1.0->spacy) (7.3.0.post1)\n",
+            "Requirement already satisfied: MarkupSafe>=2.0 in /usr/local/lib/python3.11/dist-packages (from jinja2->spacy) (3.0.2)\n",
+            "Requirement already satisfied: marisa-trie>=1.1.0 in /usr/local/lib/python3.11/dist-packages (from language-data>=1.2->langcodes<4.0.0,>=3.2.0->spacy) (1.2.1)\n",
+            "Requirement already satisfied: markdown-it-py>=2.2.0 in /usr/local/lib/python3.11/dist-packages (from rich>=10.11.0->typer<1.0.0,>=0.3.0->spacy) (3.0.0)\n",
+            "Requirement already satisfied: pygments<3.0.0,>=2.13.0 in /usr/local/lib/python3.11/dist-packages (from rich>=10.11.0->typer<1.0.0,>=0.3.0->spacy) (2.19.2)\n",
+            "Requirement already satisfied: wrapt in /usr/local/lib/python3.11/dist-packages (from smart-open<8.0.0,>=5.2.1->weasel<0.5.0,>=0.1.0->spacy) (1.17.2)\n",
+            "Requirement already satisfied: mdurl~=0.1 in /usr/local/lib/python3.11/dist-packages (from markdown-it-py>=2.2.0->rich>=10.11.0->typer<1.0.0,>=0.3.0->spacy) (0.1.2)\n"
+          ]
+        }
+      ],
+      "source": [
+        "pip install spacy\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 3,
+      "id": "46fc124b",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "46fc124b",
+        "outputId": "aecad1eb-a82d-4e6b-9f13-f433299fb4e3"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Collecting pt-core-news-sm==3.8.0\n",
+            "  Downloading https://github.com/explosion/spacy-models/releases/download/pt_core_news_sm-3.8.0/pt_core_news_sm-3.8.0-py3-none-any.whl (13.0 MB)\n",
+            "\u001b[2K     \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m13.0/13.0 MB\u001b[0m \u001b[31m86.9 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n",
+            "\u001b[?25hInstalling collected packages: pt-core-news-sm\n",
+            "Successfully installed pt-core-news-sm-3.8.0\n",
+            "\u001b[38;5;2m✔ Download and installation successful\u001b[0m\n",
+            "You can now load the package via spacy.load('pt_core_news_sm')\n",
+            "\u001b[38;5;3m⚠ Restart to reload dependencies\u001b[0m\n",
+            "If you are in a Jupyter or Colab notebook, you may need to restart Python in\n",
+            "order to load all the package's dependencies. You can do this by selecting the\n",
+            "'Restart kernel' or 'Restart runtime' option.\n"
+          ]
+        }
+      ],
+      "source": [
+        "!python -m spacy download pt_core_news_sm\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 4,
+      "id": "26f8b9ea",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "26f8b9ea",
+        "outputId": "964fbda7-cf6e-4781-e560-0e06f0e906f0"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "{'Damião', 'Damião Cubas', 'Brás Cubas', 'Brás', 'Luís Cubas', 'conde da Cunha'}\n"
+          ]
+        }
+      ],
+      "source": [
+        "#Seu código aqui\n",
+        "import spacy\n",
+        "\n",
+        "# Carregue o modelo de português do spaCy\n",
+        "nlp = spacy.load(\"pt_core_news_sm\")\n",
+        "\n",
+        "# Texto do capítulo 3\n",
+        "cap_3_bras_cubas = \"\"\"\n",
+        "Mas, já que falei nos meus dois tios, deixem-me fazer aqui um curto esboço genealógico. O fundador de minha família foi um certo Damião Cubas, que floresceu na primeira metade do século XVIII. Era tanoeiro de ofício, natural do Rio de Janeiro, onde teria morrido na penúria e na obscuridade, se somente exercesse a tanoaria. Mas não; fez-se lavrador, plantou, colheu, permutou o seu produto por boas e honradas patacas, até que morreu, deixando grosso cabedal a um filho, o licenciado Luís Cubas. Neste rapaz é que verdadeiramente começa a série de meus avós –– dos avós que a minha família sempre confessou –– porque o Damião Cubas era afinal de contas um tanoeiro, e talvez mau tanoeiro, ao passo que o Luís Cubas estudou em Coimbra, primou no Estado, e foi um dos amigos particulares do vice-rei conde da Cunha. Como este apelido de Cubas lhe cheirasse excessivamente a tanoaria, alegava meu pai, bisneto do Damião, que o dito apelido fora dado a um cavaleiro, herói nas jornadas da Africa, em prêmio da façanha que praticou arrebatando trezentas cubas ao mouros. Meu pai era homem de imaginação; escapou à tanoaria nas asas de um calembour. Era um bom caráter, meu pai, varão digno e leal como poucos. Tinha, é verdade, uns fumos de pacholice; mas quem não é um pouco pachola nesse mundo? Releva notar que ele não recorreu à inventiva senão depois de experimentar a falsificação; primeiramente, entroncou-se na família daquele meu famoso homônimo, o capitão-mor Brás Cubas, que fundou a vila de São Vicente, onde morreu em 1592, e por esse motivo é que me deu o nome de Brás. Opôs-se-lhe, porém, a família do capitão-mor, e foi então que ele imaginou as trezentas cubas mouriscas. Vivem ainda alguns membros de minha família, minha sobrinha Venância, por exemplo, o lírio-do-vale, que é a flor das damas do seu tempo; vive o pai, o Cotrim, um sujeito que... Mas não antecipemos os sucessos; acabemos de uma vez com o nosso emplasto.\n",
+        "\"\"\"\n",
+        "\n",
+        "# Processar o texto\n",
+        "doc = nlp(cap_3_bras_cubas)\n",
+        "\n",
+        "# Extrair os nomes de pessoas\n",
+        "nomes_personagens = set(ent.text for ent in doc.ents if ent.label_ == \"PER\")\n",
+        "\n",
+        "# Exibir o resultado\n",
+        "print(nomes_personagens)\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "7fa8e90d",
+      "metadata": {
+        "id": "7fa8e90d"
+      },
+      "source": [
+        "# <font color='00609C'>Questão 2</font>\n",
+        "\n",
+        "Extraia todos os pronomes deste capitulo.\n",
+        "\n",
+        "**<font color='D72009'> Sua resposta aqui </font>**"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 5,
+      "id": "76a17afc",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "76a17afc",
+        "outputId": "54ee21bd-021b-496e-fc69-99efaa0b01d9"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "['que', 'onde', 'que', 'que', 'lhe', 'que', 'que', 'poucos', 'quem', 'ele', 'que', 'onde', 'me', 'ele', 'que', 'que']\n"
+          ]
+        }
+      ],
+      "source": [
+        "#Seu código aqui\n",
+        "\n",
+        "# Extrair pronomes (entidades do tipo \"PRON\")\n",
+        "pronomes = [token.text for token in doc if token.pos_ == \"PRON\"]\n",
+        "\n",
+        "# Exibir o resultado\n",
+        "print(pronomes)\n",
+        "\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "d9d5a5e5",
+      "metadata": {
+        "id": "d9d5a5e5"
+      },
+      "source": [
+        "# <font color='00609C'> Questão 3</font>\n",
+        "\n",
+        "Utilize os visualizadores para explorar o mapa de dependencias de uma frase a sua escolha deste capitulo. [visualizers](https://spacy.io/usage/visualizers)\n",
+        "\n",
+        "Você pode acessar diretamente uma frase especifica ao utilizar o gerador \"sents\", por exemplo:\n",
+        "\n",
+        "```python\n",
+        "frases = [frase for frase in texto.sents]\n",
+        "frases[2]\n",
+        "```\n",
+        "\n",
+        "Era tanoeiro de ofício, natural do Rio de Janeiro LOC , onde teria morrido na penúria e na obscuridade, se somente exercesse a tanoaria.\n",
+        "\n",
+        "**<font color='D72009'> Sua resposta aqui </font>**"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from spacy import displacy"
+      ],
+      "metadata": {
+        "id": "lPkrMCdnJGB5"
+      },
+      "id": "lPkrMCdnJGB5",
+      "execution_count": 7,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 8,
+      "id": "966f7526",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 528
+        },
+        "id": "966f7526",
+        "outputId": "ad6050cc-e0e5-407d-ee14-26b888075fab"
+      },
+      "outputs": [
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/plain": [
+              "<IPython.core.display.HTML object>"
+            ],
+            "text/html": [
+              "<span class=\"tex2jax_ignore\"><svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xml:lang=\"pt\" id=\"047323717d4d4454a21cc1473d9946bc-0\" class=\"displacy\" width=\"3130\" height=\"487.0\" direction=\"ltr\" style=\"max-width: none; height: 487.0px; color: #000000; background: #ffffff; font-family: Arial; direction: ltr\">\n",
+              "<text class=\"displacy-token\" fill=\"currentColor\" text-anchor=\"middle\" y=\"397.0\">\n",
+              "    <tspan class=\"displacy-word\" fill=\"currentColor\" x=\"50\">Era</tspan>\n",
+              "    <tspan class=\"displacy-tag\" dy=\"2em\" fill=\"currentColor\" x=\"50\">AUX</tspan>\n",
+              "</text>\n",
+              "\n",
+              "<text class=\"displacy-token\" fill=\"currentColor\" text-anchor=\"middle\" y=\"397.0\">\n",
+              "    <tspan class=\"displacy-word\" fill=\"currentColor\" x=\"190\">tanoeiro</tspan>\n",
+              "    <tspan class=\"displacy-tag\" dy=\"2em\" fill=\"currentColor\" x=\"190\">NOUN</tspan>\n",
+              "</text>\n",
+              "\n",
+              "<text class=\"displacy-token\" fill=\"currentColor\" text-anchor=\"middle\" y=\"397.0\">\n",
+              "    <tspan class=\"displacy-word\" fill=\"currentColor\" x=\"330\">de</tspan>\n",
+              "    <tspan class=\"displacy-tag\" dy=\"2em\" fill=\"currentColor\" x=\"330\">ADP</tspan>\n",
+              "</text>\n",
+              "\n",
+              "<text class=\"displacy-token\" fill=\"currentColor\" text-anchor=\"middle\" y=\"397.0\">\n",
+              "    <tspan class=\"displacy-word\" fill=\"currentColor\" x=\"470\">ofício,</tspan>\n",
+              "    <tspan class=\"displacy-tag\" dy=\"2em\" fill=\"currentColor\" x=\"470\">NOUN</tspan>\n",
+              "</text>\n",
+              "\n",
+              "<text class=\"displacy-token\" fill=\"currentColor\" text-anchor=\"middle\" y=\"397.0\">\n",
+              "    <tspan class=\"displacy-word\" fill=\"currentColor\" x=\"610\">natural</tspan>\n",
+              "    <tspan class=\"displacy-tag\" dy=\"2em\" fill=\"currentColor\" x=\"610\">ADJ</tspan>\n",
+              "</text>\n",
+              "\n",
+              "<text class=\"displacy-token\" fill=\"currentColor\" text-anchor=\"middle\" y=\"397.0\">\n",
+              "    <tspan class=\"displacy-word\" fill=\"currentColor\" x=\"750\">do</tspan>\n",
+              "    <tspan class=\"displacy-tag\" dy=\"2em\" fill=\"currentColor\" x=\"750\">ADP</tspan>\n",
+              "</text>\n",
+              "\n",
+              "<text class=\"displacy-token\" fill=\"currentColor\" text-anchor=\"middle\" y=\"397.0\">\n",
+              "    <tspan class=\"displacy-word\" fill=\"currentColor\" x=\"890\">Rio</tspan>\n",
+              "    <tspan class=\"displacy-tag\" dy=\"2em\" fill=\"currentColor\" x=\"890\">PROPN</tspan>\n",
+              "</text>\n",
+              "\n",
+              "<text class=\"displacy-token\" fill=\"currentColor\" text-anchor=\"middle\" y=\"397.0\">\n",
+              "    <tspan class=\"displacy-word\" fill=\"currentColor\" x=\"1030\">de</tspan>\n",
+              "    <tspan class=\"displacy-tag\" dy=\"2em\" fill=\"currentColor\" x=\"1030\">ADP</tspan>\n",
+              "</text>\n",
+              "\n",
+              "<text class=\"displacy-token\" fill=\"currentColor\" text-anchor=\"middle\" y=\"397.0\">\n",
+              "    <tspan class=\"displacy-word\" fill=\"currentColor\" x=\"1170\">Janeiro,</tspan>\n",
+              "    <tspan class=\"displacy-tag\" dy=\"2em\" fill=\"currentColor\" x=\"1170\">PROPN</tspan>\n",
+              "</text>\n",
+              "\n",
+              "<text class=\"displacy-token\" fill=\"currentColor\" text-anchor=\"middle\" y=\"397.0\">\n",
+              "    <tspan class=\"displacy-word\" fill=\"currentColor\" x=\"1310\">onde</tspan>\n",
+              "    <tspan class=\"displacy-tag\" dy=\"2em\" fill=\"currentColor\" x=\"1310\">PRON</tspan>\n",
+              "</text>\n",
+              "\n",
+              "<text class=\"displacy-token\" fill=\"currentColor\" text-anchor=\"middle\" y=\"397.0\">\n",
+              "    <tspan class=\"displacy-word\" fill=\"currentColor\" x=\"1450\">teria</tspan>\n",
+              "    <tspan class=\"displacy-tag\" dy=\"2em\" fill=\"currentColor\" x=\"1450\">AUX</tspan>\n",
+              "</text>\n",
+              "\n",
+              "<text class=\"displacy-token\" fill=\"currentColor\" text-anchor=\"middle\" y=\"397.0\">\n",
+              "    <tspan class=\"displacy-word\" fill=\"currentColor\" x=\"1590\">morrido</tspan>\n",
+              "    <tspan class=\"displacy-tag\" dy=\"2em\" fill=\"currentColor\" x=\"1590\">VERB</tspan>\n",
+              "</text>\n",
+              "\n",
+              "<text class=\"displacy-token\" fill=\"currentColor\" text-anchor=\"middle\" y=\"397.0\">\n",
+              "    <tspan class=\"displacy-word\" fill=\"currentColor\" x=\"1730\">na</tspan>\n",
+              "    <tspan class=\"displacy-tag\" dy=\"2em\" fill=\"currentColor\" x=\"1730\">ADP</tspan>\n",
+              "</text>\n",
+              "\n",
+              "<text class=\"displacy-token\" fill=\"currentColor\" text-anchor=\"middle\" y=\"397.0\">\n",
+              "    <tspan class=\"displacy-word\" fill=\"currentColor\" x=\"1870\">penúria</tspan>\n",
+              "    <tspan class=\"displacy-tag\" dy=\"2em\" fill=\"currentColor\" x=\"1870\">NOUN</tspan>\n",
+              "</text>\n",
+              "\n",
+              "<text class=\"displacy-token\" fill=\"currentColor\" text-anchor=\"middle\" y=\"397.0\">\n",
+              "    <tspan class=\"displacy-word\" fill=\"currentColor\" x=\"2010\">e</tspan>\n",
+              "    <tspan class=\"displacy-tag\" dy=\"2em\" fill=\"currentColor\" x=\"2010\">CCONJ</tspan>\n",
+              "</text>\n",
+              "\n",
+              "<text class=\"displacy-token\" fill=\"currentColor\" text-anchor=\"middle\" y=\"397.0\">\n",
+              "    <tspan class=\"displacy-word\" fill=\"currentColor\" x=\"2150\">na</tspan>\n",
+              "    <tspan class=\"displacy-tag\" dy=\"2em\" fill=\"currentColor\" x=\"2150\">ADP</tspan>\n",
+              "</text>\n",
+              "\n",
+              "<text class=\"displacy-token\" fill=\"currentColor\" text-anchor=\"middle\" y=\"397.0\">\n",
+              "    <tspan class=\"displacy-word\" fill=\"currentColor\" x=\"2290\">obscuridade,</tspan>\n",
+              "    <tspan class=\"displacy-tag\" dy=\"2em\" fill=\"currentColor\" x=\"2290\">NOUN</tspan>\n",
+              "</text>\n",
+              "\n",
+              "<text class=\"displacy-token\" fill=\"currentColor\" text-anchor=\"middle\" y=\"397.0\">\n",
+              "    <tspan class=\"displacy-word\" fill=\"currentColor\" x=\"2430\">se</tspan>\n",
+              "    <tspan class=\"displacy-tag\" dy=\"2em\" fill=\"currentColor\" x=\"2430\">SCONJ</tspan>\n",
+              "</text>\n",
+              "\n",
+              "<text class=\"displacy-token\" fill=\"currentColor\" text-anchor=\"middle\" y=\"397.0\">\n",
+              "    <tspan class=\"displacy-word\" fill=\"currentColor\" x=\"2570\">somente</tspan>\n",
+              "    <tspan class=\"displacy-tag\" dy=\"2em\" fill=\"currentColor\" x=\"2570\">ADV</tspan>\n",
+              "</text>\n",
+              "\n",
+              "<text class=\"displacy-token\" fill=\"currentColor\" text-anchor=\"middle\" y=\"397.0\">\n",
+              "    <tspan class=\"displacy-word\" fill=\"currentColor\" x=\"2710\">exercesse</tspan>\n",
+              "    <tspan class=\"displacy-tag\" dy=\"2em\" fill=\"currentColor\" x=\"2710\">VERB</tspan>\n",
+              "</text>\n",
+              "\n",
+              "<text class=\"displacy-token\" fill=\"currentColor\" text-anchor=\"middle\" y=\"397.0\">\n",
+              "    <tspan class=\"displacy-word\" fill=\"currentColor\" x=\"2850\">a</tspan>\n",
+              "    <tspan class=\"displacy-tag\" dy=\"2em\" fill=\"currentColor\" x=\"2850\">DET</tspan>\n",
+              "</text>\n",
+              "\n",
+              "<text class=\"displacy-token\" fill=\"currentColor\" text-anchor=\"middle\" y=\"397.0\">\n",
+              "    <tspan class=\"displacy-word\" fill=\"currentColor\" x=\"2990\">tanoaria.</tspan>\n",
+              "    <tspan class=\"displacy-tag\" dy=\"2em\" fill=\"currentColor\" x=\"2990\">NOUN</tspan>\n",
+              "</text>\n",
+              "\n",
+              "<g class=\"displacy-arrow\">\n",
+              "    <path class=\"displacy-arc\" id=\"arrow-047323717d4d4454a21cc1473d9946bc-0-0\" stroke-width=\"2px\" d=\"M70,352.0 C70,282.0 170.0,282.0 170.0,352.0\" fill=\"none\" stroke=\"currentColor\"/>\n",
+              "    <text dy=\"1.25em\" style=\"font-size: 0.8em; letter-spacing: 1px\">\n",
+              "        <textPath xlink:href=\"#arrow-047323717d4d4454a21cc1473d9946bc-0-0\" class=\"displacy-label\" startOffset=\"50%\" side=\"left\" fill=\"currentColor\" text-anchor=\"middle\">cop</textPath>\n",
+              "    </text>\n",
+              "    <path class=\"displacy-arrowhead\" d=\"M70,354.0 L62,342.0 78,342.0\" fill=\"currentColor\"/>\n",
+              "</g>\n",
+              "\n",
+              "<g class=\"displacy-arrow\">\n",
+              "    <path class=\"displacy-arc\" id=\"arrow-047323717d4d4454a21cc1473d9946bc-0-1\" stroke-width=\"2px\" d=\"M350,352.0 C350,282.0 450.0,282.0 450.0,352.0\" fill=\"none\" stroke=\"currentColor\"/>\n",
+              "    <text dy=\"1.25em\" style=\"font-size: 0.8em; letter-spacing: 1px\">\n",
+              "        <textPath xlink:href=\"#arrow-047323717d4d4454a21cc1473d9946bc-0-1\" class=\"displacy-label\" startOffset=\"50%\" side=\"left\" fill=\"currentColor\" text-anchor=\"middle\">case</textPath>\n",
+              "    </text>\n",
+              "    <path class=\"displacy-arrowhead\" d=\"M350,354.0 L342,342.0 358,342.0\" fill=\"currentColor\"/>\n",
+              "</g>\n",
+              "\n",
+              "<g class=\"displacy-arrow\">\n",
+              "    <path class=\"displacy-arc\" id=\"arrow-047323717d4d4454a21cc1473d9946bc-0-2\" stroke-width=\"2px\" d=\"M210,352.0 C210,212.0 455.0,212.0 455.0,352.0\" fill=\"none\" stroke=\"currentColor\"/>\n",
+              "    <text dy=\"1.25em\" style=\"font-size: 0.8em; letter-spacing: 1px\">\n",
+              "        <textPath xlink:href=\"#arrow-047323717d4d4454a21cc1473d9946bc-0-2\" class=\"displacy-label\" startOffset=\"50%\" side=\"left\" fill=\"currentColor\" text-anchor=\"middle\">nmod</textPath>\n",
+              "    </text>\n",
+              "    <path class=\"displacy-arrowhead\" d=\"M455.0,354.0 L463.0,342.0 447.0,342.0\" fill=\"currentColor\"/>\n",
+              "</g>\n",
+              "\n",
+              "<g class=\"displacy-arrow\">\n",
+              "    <path class=\"displacy-arc\" id=\"arrow-047323717d4d4454a21cc1473d9946bc-0-3\" stroke-width=\"2px\" d=\"M210,352.0 C210,142.0 600.0,142.0 600.0,352.0\" fill=\"none\" stroke=\"currentColor\"/>\n",
+              "    <text dy=\"1.25em\" style=\"font-size: 0.8em; letter-spacing: 1px\">\n",
+              "        <textPath xlink:href=\"#arrow-047323717d4d4454a21cc1473d9946bc-0-3\" class=\"displacy-label\" startOffset=\"50%\" side=\"left\" fill=\"currentColor\" text-anchor=\"middle\">conj</textPath>\n",
+              "    </text>\n",
+              "    <path class=\"displacy-arrowhead\" d=\"M600.0,354.0 L608.0,342.0 592.0,342.0\" fill=\"currentColor\"/>\n",
+              "</g>\n",
+              "\n",
+              "<g class=\"displacy-arrow\">\n",
+              "    <path class=\"displacy-arc\" id=\"arrow-047323717d4d4454a21cc1473d9946bc-0-4\" stroke-width=\"2px\" d=\"M770,352.0 C770,282.0 870.0,282.0 870.0,352.0\" fill=\"none\" stroke=\"currentColor\"/>\n",
+              "    <text dy=\"1.25em\" style=\"font-size: 0.8em; letter-spacing: 1px\">\n",
+              "        <textPath xlink:href=\"#arrow-047323717d4d4454a21cc1473d9946bc-0-4\" class=\"displacy-label\" startOffset=\"50%\" side=\"left\" fill=\"currentColor\" text-anchor=\"middle\">case</textPath>\n",
+              "    </text>\n",
+              "    <path class=\"displacy-arrowhead\" d=\"M770,354.0 L762,342.0 778,342.0\" fill=\"currentColor\"/>\n",
+              "</g>\n",
+              "\n",
+              "<g class=\"displacy-arrow\">\n",
+              "    <path class=\"displacy-arc\" id=\"arrow-047323717d4d4454a21cc1473d9946bc-0-5\" stroke-width=\"2px\" d=\"M630,352.0 C630,212.0 875.0,212.0 875.0,352.0\" fill=\"none\" stroke=\"currentColor\"/>\n",
+              "    <text dy=\"1.25em\" style=\"font-size: 0.8em; letter-spacing: 1px\">\n",
+              "        <textPath xlink:href=\"#arrow-047323717d4d4454a21cc1473d9946bc-0-5\" class=\"displacy-label\" startOffset=\"50%\" side=\"left\" fill=\"currentColor\" text-anchor=\"middle\">obl</textPath>\n",
+              "    </text>\n",
+              "    <path class=\"displacy-arrowhead\" d=\"M875.0,354.0 L883.0,342.0 867.0,342.0\" fill=\"currentColor\"/>\n",
+              "</g>\n",
+              "\n",
+              "<g class=\"displacy-arrow\">\n",
+              "    <path class=\"displacy-arc\" id=\"arrow-047323717d4d4454a21cc1473d9946bc-0-6\" stroke-width=\"2px\" d=\"M1050,352.0 C1050,282.0 1150.0,282.0 1150.0,352.0\" fill=\"none\" stroke=\"currentColor\"/>\n",
+              "    <text dy=\"1.25em\" style=\"font-size: 0.8em; letter-spacing: 1px\">\n",
+              "        <textPath xlink:href=\"#arrow-047323717d4d4454a21cc1473d9946bc-0-6\" class=\"displacy-label\" startOffset=\"50%\" side=\"left\" fill=\"currentColor\" text-anchor=\"middle\">case</textPath>\n",
+              "    </text>\n",
+              "    <path class=\"displacy-arrowhead\" d=\"M1050,354.0 L1042,342.0 1058,342.0\" fill=\"currentColor\"/>\n",
+              "</g>\n",
+              "\n",
+              "<g class=\"displacy-arrow\">\n",
+              "    <path class=\"displacy-arc\" id=\"arrow-047323717d4d4454a21cc1473d9946bc-0-7\" stroke-width=\"2px\" d=\"M910,352.0 C910,212.0 1155.0,212.0 1155.0,352.0\" fill=\"none\" stroke=\"currentColor\"/>\n",
+              "    <text dy=\"1.25em\" style=\"font-size: 0.8em; letter-spacing: 1px\">\n",
+              "        <textPath xlink:href=\"#arrow-047323717d4d4454a21cc1473d9946bc-0-7\" class=\"displacy-label\" startOffset=\"50%\" side=\"left\" fill=\"currentColor\" text-anchor=\"middle\">nmod</textPath>\n",
+              "    </text>\n",
+              "    <path class=\"displacy-arrowhead\" d=\"M1155.0,354.0 L1163.0,342.0 1147.0,342.0\" fill=\"currentColor\"/>\n",
+              "</g>\n",
+              "\n",
+              "<g class=\"displacy-arrow\">\n",
+              "    <path class=\"displacy-arc\" id=\"arrow-047323717d4d4454a21cc1473d9946bc-0-8\" stroke-width=\"2px\" d=\"M1330,352.0 C1330,212.0 1575.0,212.0 1575.0,352.0\" fill=\"none\" stroke=\"currentColor\"/>\n",
+              "    <text dy=\"1.25em\" style=\"font-size: 0.8em; letter-spacing: 1px\">\n",
+              "        <textPath xlink:href=\"#arrow-047323717d4d4454a21cc1473d9946bc-0-8\" class=\"displacy-label\" startOffset=\"50%\" side=\"left\" fill=\"currentColor\" text-anchor=\"middle\">obl</textPath>\n",
+              "    </text>\n",
+              "    <path class=\"displacy-arrowhead\" d=\"M1330,354.0 L1322,342.0 1338,342.0\" fill=\"currentColor\"/>\n",
+              "</g>\n",
+              "\n",
+              "<g class=\"displacy-arrow\">\n",
+              "    <path class=\"displacy-arc\" id=\"arrow-047323717d4d4454a21cc1473d9946bc-0-9\" stroke-width=\"2px\" d=\"M1470,352.0 C1470,282.0 1570.0,282.0 1570.0,352.0\" fill=\"none\" stroke=\"currentColor\"/>\n",
+              "    <text dy=\"1.25em\" style=\"font-size: 0.8em; letter-spacing: 1px\">\n",
+              "        <textPath xlink:href=\"#arrow-047323717d4d4454a21cc1473d9946bc-0-9\" class=\"displacy-label\" startOffset=\"50%\" side=\"left\" fill=\"currentColor\" text-anchor=\"middle\">aux</textPath>\n",
+              "    </text>\n",
+              "    <path class=\"displacy-arrowhead\" d=\"M1470,354.0 L1462,342.0 1478,342.0\" fill=\"currentColor\"/>\n",
+              "</g>\n",
+              "\n",
+              "<g class=\"displacy-arrow\">\n",
+              "    <path class=\"displacy-arc\" id=\"arrow-047323717d4d4454a21cc1473d9946bc-0-10\" stroke-width=\"2px\" d=\"M210,352.0 C210,72.0 1585.0,72.0 1585.0,352.0\" fill=\"none\" stroke=\"currentColor\"/>\n",
+              "    <text dy=\"1.25em\" style=\"font-size: 0.8em; letter-spacing: 1px\">\n",
+              "        <textPath xlink:href=\"#arrow-047323717d4d4454a21cc1473d9946bc-0-10\" class=\"displacy-label\" startOffset=\"50%\" side=\"left\" fill=\"currentColor\" text-anchor=\"middle\">acl:relcl</textPath>\n",
+              "    </text>\n",
+              "    <path class=\"displacy-arrowhead\" d=\"M1585.0,354.0 L1593.0,342.0 1577.0,342.0\" fill=\"currentColor\"/>\n",
+              "</g>\n",
+              "\n",
+              "<g class=\"displacy-arrow\">\n",
+              "    <path class=\"displacy-arc\" id=\"arrow-047323717d4d4454a21cc1473d9946bc-0-11\" stroke-width=\"2px\" d=\"M1750,352.0 C1750,282.0 1850.0,282.0 1850.0,352.0\" fill=\"none\" stroke=\"currentColor\"/>\n",
+              "    <text dy=\"1.25em\" style=\"font-size: 0.8em; letter-spacing: 1px\">\n",
+              "        <textPath xlink:href=\"#arrow-047323717d4d4454a21cc1473d9946bc-0-11\" class=\"displacy-label\" startOffset=\"50%\" side=\"left\" fill=\"currentColor\" text-anchor=\"middle\">case</textPath>\n",
+              "    </text>\n",
+              "    <path class=\"displacy-arrowhead\" d=\"M1750,354.0 L1742,342.0 1758,342.0\" fill=\"currentColor\"/>\n",
+              "</g>\n",
+              "\n",
+              "<g class=\"displacy-arrow\">\n",
+              "    <path class=\"displacy-arc\" id=\"arrow-047323717d4d4454a21cc1473d9946bc-0-12\" stroke-width=\"2px\" d=\"M1610,352.0 C1610,212.0 1855.0,212.0 1855.0,352.0\" fill=\"none\" stroke=\"currentColor\"/>\n",
+              "    <text dy=\"1.25em\" style=\"font-size: 0.8em; letter-spacing: 1px\">\n",
+              "        <textPath xlink:href=\"#arrow-047323717d4d4454a21cc1473d9946bc-0-12\" class=\"displacy-label\" startOffset=\"50%\" side=\"left\" fill=\"currentColor\" text-anchor=\"middle\">obl</textPath>\n",
+              "    </text>\n",
+              "    <path class=\"displacy-arrowhead\" d=\"M1855.0,354.0 L1863.0,342.0 1847.0,342.0\" fill=\"currentColor\"/>\n",
+              "</g>\n",
+              "\n",
+              "<g class=\"displacy-arrow\">\n",
+              "    <path class=\"displacy-arc\" id=\"arrow-047323717d4d4454a21cc1473d9946bc-0-13\" stroke-width=\"2px\" d=\"M2030,352.0 C2030,212.0 2275.0,212.0 2275.0,352.0\" fill=\"none\" stroke=\"currentColor\"/>\n",
+              "    <text dy=\"1.25em\" style=\"font-size: 0.8em; letter-spacing: 1px\">\n",
+              "        <textPath xlink:href=\"#arrow-047323717d4d4454a21cc1473d9946bc-0-13\" class=\"displacy-label\" startOffset=\"50%\" side=\"left\" fill=\"currentColor\" text-anchor=\"middle\">cc</textPath>\n",
+              "    </text>\n",
+              "    <path class=\"displacy-arrowhead\" d=\"M2030,354.0 L2022,342.0 2038,342.0\" fill=\"currentColor\"/>\n",
+              "</g>\n",
+              "\n",
+              "<g class=\"displacy-arrow\">\n",
+              "    <path class=\"displacy-arc\" id=\"arrow-047323717d4d4454a21cc1473d9946bc-0-14\" stroke-width=\"2px\" d=\"M2170,352.0 C2170,282.0 2270.0,282.0 2270.0,352.0\" fill=\"none\" stroke=\"currentColor\"/>\n",
+              "    <text dy=\"1.25em\" style=\"font-size: 0.8em; letter-spacing: 1px\">\n",
+              "        <textPath xlink:href=\"#arrow-047323717d4d4454a21cc1473d9946bc-0-14\" class=\"displacy-label\" startOffset=\"50%\" side=\"left\" fill=\"currentColor\" text-anchor=\"middle\">case</textPath>\n",
+              "    </text>\n",
+              "    <path class=\"displacy-arrowhead\" d=\"M2170,354.0 L2162,342.0 2178,342.0\" fill=\"currentColor\"/>\n",
+              "</g>\n",
+              "\n",
+              "<g class=\"displacy-arrow\">\n",
+              "    <path class=\"displacy-arc\" id=\"arrow-047323717d4d4454a21cc1473d9946bc-0-15\" stroke-width=\"2px\" d=\"M1890,352.0 C1890,142.0 2280.0,142.0 2280.0,352.0\" fill=\"none\" stroke=\"currentColor\"/>\n",
+              "    <text dy=\"1.25em\" style=\"font-size: 0.8em; letter-spacing: 1px\">\n",
+              "        <textPath xlink:href=\"#arrow-047323717d4d4454a21cc1473d9946bc-0-15\" class=\"displacy-label\" startOffset=\"50%\" side=\"left\" fill=\"currentColor\" text-anchor=\"middle\">conj</textPath>\n",
+              "    </text>\n",
+              "    <path class=\"displacy-arrowhead\" d=\"M2280.0,354.0 L2288.0,342.0 2272.0,342.0\" fill=\"currentColor\"/>\n",
+              "</g>\n",
+              "\n",
+              "<g class=\"displacy-arrow\">\n",
+              "    <path class=\"displacy-arc\" id=\"arrow-047323717d4d4454a21cc1473d9946bc-0-16\" stroke-width=\"2px\" d=\"M2450,352.0 C2450,212.0 2695.0,212.0 2695.0,352.0\" fill=\"none\" stroke=\"currentColor\"/>\n",
+              "    <text dy=\"1.25em\" style=\"font-size: 0.8em; letter-spacing: 1px\">\n",
+              "        <textPath xlink:href=\"#arrow-047323717d4d4454a21cc1473d9946bc-0-16\" class=\"displacy-label\" startOffset=\"50%\" side=\"left\" fill=\"currentColor\" text-anchor=\"middle\">mark</textPath>\n",
+              "    </text>\n",
+              "    <path class=\"displacy-arrowhead\" d=\"M2450,354.0 L2442,342.0 2458,342.0\" fill=\"currentColor\"/>\n",
+              "</g>\n",
+              "\n",
+              "<g class=\"displacy-arrow\">\n",
+              "    <path class=\"displacy-arc\" id=\"arrow-047323717d4d4454a21cc1473d9946bc-0-17\" stroke-width=\"2px\" d=\"M2590,352.0 C2590,282.0 2690.0,282.0 2690.0,352.0\" fill=\"none\" stroke=\"currentColor\"/>\n",
+              "    <text dy=\"1.25em\" style=\"font-size: 0.8em; letter-spacing: 1px\">\n",
+              "        <textPath xlink:href=\"#arrow-047323717d4d4454a21cc1473d9946bc-0-17\" class=\"displacy-label\" startOffset=\"50%\" side=\"left\" fill=\"currentColor\" text-anchor=\"middle\">advmod</textPath>\n",
+              "    </text>\n",
+              "    <path class=\"displacy-arrowhead\" d=\"M2590,354.0 L2582,342.0 2598,342.0\" fill=\"currentColor\"/>\n",
+              "</g>\n",
+              "\n",
+              "<g class=\"displacy-arrow\">\n",
+              "    <path class=\"displacy-arc\" id=\"arrow-047323717d4d4454a21cc1473d9946bc-0-18\" stroke-width=\"2px\" d=\"M210,352.0 C210,2.0 2710.0,2.0 2710.0,352.0\" fill=\"none\" stroke=\"currentColor\"/>\n",
+              "    <text dy=\"1.25em\" style=\"font-size: 0.8em; letter-spacing: 1px\">\n",
+              "        <textPath xlink:href=\"#arrow-047323717d4d4454a21cc1473d9946bc-0-18\" class=\"displacy-label\" startOffset=\"50%\" side=\"left\" fill=\"currentColor\" text-anchor=\"middle\">advcl</textPath>\n",
+              "    </text>\n",
+              "    <path class=\"displacy-arrowhead\" d=\"M2710.0,354.0 L2718.0,342.0 2702.0,342.0\" fill=\"currentColor\"/>\n",
+              "</g>\n",
+              "\n",
+              "<g class=\"displacy-arrow\">\n",
+              "    <path class=\"displacy-arc\" id=\"arrow-047323717d4d4454a21cc1473d9946bc-0-19\" stroke-width=\"2px\" d=\"M2870,352.0 C2870,282.0 2970.0,282.0 2970.0,352.0\" fill=\"none\" stroke=\"currentColor\"/>\n",
+              "    <text dy=\"1.25em\" style=\"font-size: 0.8em; letter-spacing: 1px\">\n",
+              "        <textPath xlink:href=\"#arrow-047323717d4d4454a21cc1473d9946bc-0-19\" class=\"displacy-label\" startOffset=\"50%\" side=\"left\" fill=\"currentColor\" text-anchor=\"middle\">det</textPath>\n",
+              "    </text>\n",
+              "    <path class=\"displacy-arrowhead\" d=\"M2870,354.0 L2862,342.0 2878,342.0\" fill=\"currentColor\"/>\n",
+              "</g>\n",
+              "\n",
+              "<g class=\"displacy-arrow\">\n",
+              "    <path class=\"displacy-arc\" id=\"arrow-047323717d4d4454a21cc1473d9946bc-0-20\" stroke-width=\"2px\" d=\"M2730,352.0 C2730,212.0 2975.0,212.0 2975.0,352.0\" fill=\"none\" stroke=\"currentColor\"/>\n",
+              "    <text dy=\"1.25em\" style=\"font-size: 0.8em; letter-spacing: 1px\">\n",
+              "        <textPath xlink:href=\"#arrow-047323717d4d4454a21cc1473d9946bc-0-20\" class=\"displacy-label\" startOffset=\"50%\" side=\"left\" fill=\"currentColor\" text-anchor=\"middle\">obj</textPath>\n",
+              "    </text>\n",
+              "    <path class=\"displacy-arrowhead\" d=\"M2975.0,354.0 L2983.0,342.0 2967.0,342.0\" fill=\"currentColor\"/>\n",
+              "</g>\n",
+              "</svg></span>"
+            ]
+          },
+          "metadata": {}
+        }
+      ],
+      "source": [
+        "# Seu código aqui\n",
+        "\n",
+        "frase = [frase for frase in doc.sents]\n",
+        "# Selecionar a frase específica (neste caso, a 4ª frase)\n",
+        "frase = [frase[3]] # \"Era tanoeiro de ofício, natural do Rio de Janeiro...\"\n",
+        "\n",
+        "# Gerar a visualização da dependência sintática\n",
+        "displacy.render(frase, style=\"dep\", jupyter=True, options={'distance': 140})"
+      ]
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "display_name": "Python 3 (ipykernel)",
+      "language": "python",
+      "name": "python3"
+    },
+    "language_info": {
+      "codemirror_mode": {
+        "name": "ipython",
+        "version": 3
+      },
+      "file_extension": ".py",
+      "mimetype": "text/x-python",
+      "name": "python",
+      "nbconvert_exporter": "python",
+      "pygments_lexer": "ipython3",
+      "version": "3.12.1"
+    },
+    "colab": {
+      "provenance": [],
+      "include_colab_link": true
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}
